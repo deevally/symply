@@ -1,14 +1,10 @@
 import React from "react";
 import {
   AppBar,
-  IconButton,
-  Badge,
-  MenuItem,
-  Menu,
+  
   Typography,
   Toolbar,
 } from "@material-ui/core";
-import { ShoppingCart } from "@material-ui/icons";
 import useStyles from "./styles";
 
 const Navbar = () => {

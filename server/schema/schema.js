@@ -44,7 +44,7 @@ const resolvers = {
     beers: async () => {
       try {
         const beers = await axios.get(
-          "https://api.punkapi.com/v2/beers?page=1&per_page=5"
+          "https://api.punkapi.com/v2/beers?page=1&per_page=8"
         );
         return beers.data.map(
           ({ id, tagline, first_brewed, image_url, description, name }) => ({
@@ -97,8 +97,6 @@ const resolvers = {
     deleteBeer: async (parent, args) => {
       try {
         const findbeer = await Beer.findByPk(args.id);
-        console.log(findbeer);
-
         const beer = await findbeer.destroy({ where: { id: args.id } });
         if (beer) return true;
       } catch (error) {
